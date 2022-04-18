@@ -1,0 +1,151 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphics}
+\usepackage{cases} 
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{colortbl}
+\usepackage{fontawesome}
+\usepackage{tikz}
+\usepackage{setspace}
+\usepackage{listings}
+\definecolor{dgray}{gray}{0.35} % colour of R comments
+\definecolor{lgray}{gray}{0.9999} % background colour of R-code
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc,angles}
+\usepackage[left= 2cm, right = 2cm, top = 2cm, bottom = 2cm]{geometry}
+\usepackage{scalefnt}
+\usepackage{fancybox}
+\usepackage{multirow}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\pagestyle{fancy}
+\fancyhf{}
+%\rhead{\textit{Nhóm 18}}
+\lhead{\textit{Bài Tập Lớn Đại Số Tuyến Tính}}
+\lfoot{\textit{Nhóm 5-L13}}
+\rfoot{Trang \thepage}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\lstset{ % setting appearance of R-code
+	language=C, % setting language R
+	basicstyle=\ttfamily\small, % font and size of R-code
+	backgroundcolor=\color{lgray}, % background colour of R-code
+	commentstyle=\ttfamily\small\itshape\color{dgray}, % colour of R comments
+	showstringspaces=false, % forbidding the highlighting of spaces
+	% numbering on the left
+	% cumulative numbering of rows in consecutive uses of lstlisting environment
+	breaklines=T} % automatic line breaks of code at the end of a line
+\newmdenv[linewidth=0.6pt,linecolor=black,skipabove=\topsep,skipbelow=\topsep,
+leftmargin=-5pt,rightmargin=-5pt,
+innerleftmargin=5pt,innerrightmargin=5pt]{mybox}
+\setlist{nolistsep}
+\newcommand\tab[1][0.7cm]{\hspace*{#1}}
+\setlength{\parindent}{0pt}
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH\\
+			TRƯỜNG ĐẠI HỌC BÁCH KHOA\\
+			KHOA KHOA HỌC ỨNG DỤNG\\
+		\end{center}
+		\begin{figure}[h!]
+			\begin{center}
+				\vspace{0.5cm}
+				\includegraphics[width=3cm]{hcmut.png}
+			\end{center}
+		\end{figure}
+		\vspace{2cm}
+		\begin{center}
+			\begin{tabular}{c}
+				\textbf{{\Large BÀI TẬP LỚN ĐẠI SỐ TUYẾN TÍNH}}\\ \\
+				\hline
+				\\ \\
+				\textbf{\huge{\textcolor{blue}{PHÂN TÍCH SVD }}} \\
+				\textbf{\huge{\textcolor{blue}{KHỬ NHIỄU ÂM THANH}}} \\
+				\\ \\
+				\hline
+				\textbf{{\Large Nhóm 5-L13}}
+				%	\textbf{{\Large NHÓM 18}}\\ \\
+			\end{tabular}
+		\end{center}
+		\vspace{3cm}
+		
+		\begin{table}[h]
+			\begin{tabular}{rrl}
+				\hspace{5 cm} & \textbf{Giảng viên hướng dẫn}: &Nguyễn Hữu Hiệp\\
+				
+				%& \textbf{Sinh viên thực hiện}: & Huỳnh Nga  -- 2111818 \\
+				
+				%& & Trương YY Nhi  -- 2111947  \\
+				%& & Nguyễn Thành Phát  -- 2111982 \\
+				%& & Lê Quốc Tài  -- 2112223 \\
+				%& & Nguyễn Minh Mỹ Tâm  -- 2112238 \\
+				%& & Nguyễn Hồ Ngọc Thiện  -- 2112354 \\
+				%& & Nguyễn Minh Thư  -- 2112405 \\
+			\end{tabular}
+		\end{table}
+	\begin{center}
+		\begin{tabular}{|c|l|c|c|}
+			\hline
+			\textbf{STT}  &\textbf{ Họ và tên} & \textbf{MSSV} & \textbf{Hoàn thành}\\
+			\hline
+			1 & Huỳnh Nga  & 2111818 & 100\% \\
+			\hline
+			2 & Trương YY Nhi & 2111947 & 100\% \\
+			\hline
+			3 & Nguyễn Thành Phát & 2111982 & 100\% \\
+			\hline
+			4 & Lê Quốc Tài & 2112223 & 100\%\\
+			\hline 
+			5 & Nguyễn Minh Mỹ Tâm & 2112238  & 100\%\\
+			\hline
+			6 & Nguyễn Hồ Ngọc Thiện & 2112354 & 100\%\\
+			\hline
+			7 & Nguyễn Minh Thư & 2112405 & 100\%\\
+			\hline
+		\end{tabular}
+	\end{center}
+		\vspace{1cm}
+		\begin{center}
+			{\footnotesize Ho Chi Minh City, 2022}
+		\end{center}
+	\end{titlepage}
+	\newpage
+	
+	\tableofcontents
+	
+	\newpage
+	\include{noidung}
+	\newpage 
+	\include{tailieuthamkhao} 
+	
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
